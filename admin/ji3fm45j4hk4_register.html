@@ -1,0 +1,239 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <title>會員註冊</title>
+    <style>
+      /* * {
+            outline: 1px solid black;
+        } */
+
+      body {
+        background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+      }
+
+      #id_center {
+        display: none;
+      }
+
+      #pass_center {
+        display: none;
+      }
+
+      #cheakpass_center {
+        display: none;
+      }
+
+      .id_input {
+        width: 44%;
+      }
+
+      .pass_input {
+        width: 44%;
+      }
+
+      .cheakpass_input {
+        width: 44%;
+      }
+      .mx-auto {
+        width: 145px;
+      }
+
+      @media (max-width: 575.99px) {
+        #id_right {
+          display: none;
+        }
+
+        #id_center {
+          display: block;
+        }
+
+        #pass_right {
+          display: none;
+        }
+
+        #pass_center {
+          display: block;
+        }
+
+        #cheakpass_right {
+          display: none;
+        }
+
+        #cheakpass_center {
+          display: block;
+        }
+
+        .id_input {
+          width: 90%;
+        }
+
+        .pass_input {
+          width: 90%;
+        }
+
+        .cheakpass_input {
+          width: 90%;
+        }
+
+        .mx-auto {
+          width: 147px;
+        }
+      }
+    </style>
+    <script>
+      function validateForm() {
+        var x = document.forms["registerForm"]["password"].value;
+        var y = document.forms["registerForm"]["password_check"].value;
+        if (x.length < 6) {
+          alert("密碼長度不足");
+          return false;
+        }
+        if (x != y) {
+          alert("請確認密碼是否輸入正確");
+          return false;
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light" style="background-color: #004767">
+      <a class="navbar-brand" href="#">
+        <img
+          src="../img/logo1.png"
+          width="100px"
+          height="75px"
+          class=""
+          alt=""
+        />
+        <span class="text-white ml-3">後臺管理</span>
+      </a>
+    </nav>
+
+    <h1 class="text-center mt-5 text-white">註冊頁面</h1>
+
+    <div class="container-sm pr-5 pl-5 pb-5 pt-3">
+      <form
+        name="registerForm"
+        method="post"
+        action="4fuw98u948_register.php"
+        onsubmit="return validateForm()"
+      >
+        <div class="form-group row">
+          <label
+            for="inputEmail3"
+            id="id_right"
+            class="col-sm-4 col-form-label text-right text-white"
+            >帳號</label
+          >
+          <label
+            for="inputEmail3"
+            id="id_center"
+            class="col-sm-4 col-form-label text-center text-white"
+            >帳號</label
+          >
+          <div class="col-sm-8">
+            <input
+              type="text"
+              name="username"
+              class="form-control ml-4 mb-2 id_input"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label
+            for="inputPassword3"
+            id="pass_right"
+            class="col-sm-4 col-form-label text-right text-white"
+            >密碼</label
+          >
+          <label
+            for="inputPassword3"
+            id="pass_center"
+            class="col-sm-4 col-form-label text-center text-white"
+            >密碼</label
+          >
+          <div class="col-sm-8">
+            <input
+              type="password"
+              name="password"
+              class="form-control ml-4 mt-2 mb-2 pass_input"
+              id="password"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label
+            for="inputPassword3"
+            id="cheakpass_right"
+            class="col-sm-4 col-form-label text-right text-white"
+            >確認密碼</label
+          >
+          <label
+            for="inputPassword3"
+            id="cheakpass_center"
+            class="col-sm-4 col-form-label text-center text-white"
+            >確認密碼</label
+          >
+          <div class="col-sm-8">
+            <input
+              type="password"
+              name="password_check"
+              class="form-control ml-4 mt-2 mb-2 cheakpass_input"
+              id="password_check"
+            />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="mx-auto mt-2">
+            <button
+              type="submit"
+              name="submit"
+              class="btn btn-primary mr-4"
+              style="background-color: #02df82"
+            >
+              註冊
+            </button>
+            <button
+              type="reset"
+              name="submit"
+              class="btn btn-primary"
+              style="background-color: #f9c51a"
+            >
+              重設
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- <form name="registerForm" method="post" action="4fuw98u948_register.php" onsubmit="return validateForm()">
+        帳 號：
+        <input type="text" name="username"><br /><br />
+        密 碼：
+        <input type="password" name="password" id="password"><br /><br />
+        確認密碼：
+        <input type="password" name="password_check" id="password_check"><br /><br />
+        <input type="submit" value="註冊" name="submit">
+        <input type="reset" value="重設" name="submit">
+    </form>
+ -->
+  </body>
+</html>
